@@ -3,7 +3,7 @@ from fastapi import FastAPI
 app = FastAPI(title="Fast API App")
 
 
-@app.get("/", status_code=200, tags=['root'])
+@app.get("/", status_code=200)
 def get_index():
     return {'title': 'Hello World', 'Author': "Ahilan Ashwin"}
 
