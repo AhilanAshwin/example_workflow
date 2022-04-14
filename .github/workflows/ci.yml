@@ -42,5 +42,5 @@ jobs:
         with:
           push: true
           tags: ahilanashwin/fastapi:latest
-          cache-from: type=registry,ref=user/app:latest
+          cache-from: type=registry,ref=ahilanashwin/fastapi:latest
           cache-to: type=inline        
