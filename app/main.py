@@ -5,7 +5,7 @@ app = FastAPI(title="Fast API App")
 
 @app.get("/", status_code=200)
 def get_index():
-    return {'title': 'Hello World', 'author': "Ahilan Ashwin", 'message': "This Works!!"}
+    return {'title': 'Hello World', 'author': "Ahilan Ashwin", 'version': "0.0.1"}
 
 
 @app.get('/ping', status_code=200)
