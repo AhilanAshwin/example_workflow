@@ -30,6 +30,6 @@ module "vpc" {
   tags     = local.common_tags
 }
 
-module "groups" {
-  source = "../modules/groups"
-}
+# module "groups" {
+#   source = "../modules/groups"
+# }
