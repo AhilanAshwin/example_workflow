@@ -29,3 +29,7 @@ module "vpc" {
   vpc_name = "${local.name}-${local.environment}-vpc"
   tags     = local.common_tags
 }
+
+module "groups" {
+  source = "../modules/groups"
+}
