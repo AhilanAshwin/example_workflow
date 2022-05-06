@@ -1,10 +1,9 @@
 # VPC Input Variables
 
 # VPC Name
-variable "vpc_name" {
-  description = "VPC Name"
+variable "prefix" {
+  description = "The prefix to be added to the vpc resource"
   type        = string
-  # default     = "ecsvpc"
 }
 
 variable "tags" {

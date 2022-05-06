@@ -8,7 +8,7 @@ module "vpc" {
   version = "3.14.0"
 
   # VPC Basic Details
-  name            = var.vpc_name
+  name            = "${var.prefix}-vpc"
   cidr            = var.vpc_cidr_block
   azs             = data.aws_availability_zones.available.names
   public_subnets  = var.vpc_public_subnets

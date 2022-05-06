@@ -16,6 +16,7 @@ locals {
   name        = var.name
   image       = var.image
   environment = var.environment
+  prefix      = "${var.name}-${var.environment}"
   common_tags = {
     author      = var.author
     environment = var.environment
@@ -25,11 +26,13 @@ locals {
 }
 
 module "vpc" {
-  source   = "../modules/network"
-  vpc_name = "${local.name}-${local.environment}-vpc"
-  tags     = local.common_tags
+  source = "../modules/network"
+  prefix = local.prefix
+  tags   = local.common_tags
 }
 
 # module "groups" {
 #   source = "../modules/groups"
+#   prefix = local.prefix
+#   tags   = local.common_tags
 # }
