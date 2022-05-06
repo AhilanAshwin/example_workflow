@@ -8,18 +8,24 @@ terraform {
 }
 
 provider "aws" {
-  region  = "ap-southeast-1"
+  region  = var.region
   profile = "default"
 }
 
 locals {
-  name        = "fastapi-app"
-  image       = "ahilanashwin/fastapi"
+  name        = var.name
+  image       = var.image
   environment = var.environment
   common_tags = {
     author      = var.author
     environment = var.environment
-    division    = var.business_divsion
-    app_name    = local.name
+    division    = var.business_division
+    app_name    = var.app_name
   }
+}
+
+module "vpc" {
+  source   = "../modules/network"
+  vpc_name = "${local.name}-${local.environment}-vpc"
+  tags     = local.common_tags
 }
