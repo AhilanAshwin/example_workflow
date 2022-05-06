@@ -8,11 +8,13 @@ variable "app_name" {
   type        = string
 }
 
+# Set a prefix name for the project 
 variable "app_prefix" {
-  description = "Prefix name to add to all created resources for project "
+  description = "Prefix name to add to all created resources for project"
+  type        = string
 }
 
-# Set the default environment ie development
+# Set the name of the enviroment ie, prod, stage, dev
 variable "environment" {
   description = "Environment variable used as prefix"
   type        = string
