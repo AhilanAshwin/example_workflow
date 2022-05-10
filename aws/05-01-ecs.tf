@@ -30,7 +30,7 @@ resource "aws_ecs_service" "service" {
   load_balancer {
     target_group_arn = module.alb.target_group_arns[0]
     container_name   = var.app_prefix
-    container_port   = 80
+    container_port   = var.container_port
   }
 
   depends_on = [
@@ -72,7 +72,7 @@ resource "aws_ecs_task_definition" "my-task-definition" {
       }
       portMappings = [
         {
-          containerPort = 80
+          containerPort = var.container_port
         }
       ]
     }
